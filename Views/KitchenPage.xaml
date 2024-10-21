@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CityScapeApp.Views.KitchenPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="KitchenPage">
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <VerticalStackLayout.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left,Right" Swiped="SwipeGestureRecognizer_Swiped" />
+
+        </VerticalStackLayout.GestureRecognizers>
+        <Image Source="{Binding KitchenImage}" />
+        <!--<Button Text="Root" Clicked="Button_Clicked"/>-->
+        <!--  Command="{Binding NavigateToPageCommand}"/>  -->
+    </VerticalStackLayout>
+</ContentPage>

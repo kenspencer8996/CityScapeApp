@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CityScapeApp.Views.Controls.MenuLayoutControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ctrls="clr-namespace:CityScapeApp.Views.Controls"
+    Title=""
+    Background="Transparent">
+    <Grid BackgroundColor="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="150" />
+        </Grid.RowDefinitions>
+        <HorizontalStackLayout>
+            <ImageButton
+                x:Name="SettingsImageButton"
+                AbsoluteLayout.LayoutBounds="0,0"
+                Clicked="SettingsImageButton_Clicked"
+                HeightRequest="20"
+                Source="gearsimage.png"
+                WidthRequest="20"
+                ZIndex="501" />
+            <ctrls:CityStreetSettigsContent
+                x:Name="SettingsPanel"
+                AbsoluteLayout.LayoutBounds="19,50"
+                HeightRequest="150"
+                WidthRequest="600"
+                ZIndex="501" />
+
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

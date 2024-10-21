@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityScapeApp.Views.Controls.House.HouseContent"
+             WidthRequest="120"  HeightRequest="120"  >
+     <!--<Border x:Name="MainBorder" StrokeThickness="0" 
+            Background="Transparent" Stroke="#EF1616">-->
+    <AbsoluteLayout x:Name="MainLayout"  WidthRequest="120"  HeightRequest="120" >
+                <AbsoluteLayout.GestureRecognizers>
+                 <DropGestureRecognizer  
+                DragOver="OnDragOver"
+                Drop="DropGestureRecognizer_Drop"/>
+                    <!--<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />-->
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapGestureRecognizer_Tapped_2" />
+                </AbsoluteLayout.GestureRecognizers>
+ 
+            <!--<Image x:Name="HouseImage" ZIndex="1" 
+                   AbsoluteLayout.LayoutBounds="0,0" BindingContext="{x:Reference MainLayout}"  HeightRequest="{Binding Path=Height}" WidthRequest="{Binding Path=Width} "
+                   Aspect="Fill" IsVisible="true" />-->
+        <Label x:Name="HouseNameLabel" AbsoluteLayout.LayoutBounds="0,0"  ZIndex="20" 
+                  HorizontalOptions="Center" WidthRequest="80" IsVisible="true" TextColor="White" 
+               FontSize="Micro"/>
+        <Image x:Name="HouseImage" ZIndex="1" 
+                 AbsoluteLayout.LayoutBounds="0,20"   HeightRequest="80" WidthRequest="80"
+                 Aspect="Fill" IsVisible="true" />
+            <Image x:Name="ExpandHouseImage" ZIndex="201" Source="nearrow.png" AbsoluteLayout.LayoutBounds="0,200"  
+                   MaximumHeightRequest="20"   WidthRequest="20" HeightRequest="20" IsVisible="False">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="ExpandTap" NumberOfTapsRequired="1" Tapped="ExpandTap_Tapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        <!--<Label Text="test"/>-->
+            <Label x:Name="StreetNameLabel" AbsoluteLayout.LayoutBounds="0,28"  ZIndex="7" 
+                 HorizontalOptions="Center" WidthRequest="80" TextColor="#F7F2F2" IsVisible="True"/>
+            <!--<Label x:Name="ImageNameLabel" AbsoluteLayout.LayoutBounds="0,55"  ZIndex="2" 
+               HorizontalOptions="Center" WidthRequest="80" TextColor="#F7F2F2" />-->
+            <StackLayout x:Name="PersonStack" AbsoluteLayout.LayoutBounds="60,0" ZIndex="3" HorizontalOptions="End" IsVisible="Collapse"  Margin="0,0,0,0"/>
+        </AbsoluteLayout>
+    <!--</Border>-->
+</ContentView>

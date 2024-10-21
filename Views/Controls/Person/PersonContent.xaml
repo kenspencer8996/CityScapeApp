@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="CityScapeApp.Views.Controls.Person.PersonContent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    MaximumHeightRequest="70"
+    MaximumWidthRequest="34">
+    <!--<Border  ZIndex="1">-->
+    <Grid ZIndex="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="18" />
+        </Grid.ColumnDefinitions>
+        <Label
+            x:Name="PersonNameLabel"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            FontSize="10"
+            HorizontalOptions="Center"
+            Text="{Binding Name}"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="PersonFundsLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            FontSize="10"
+            HorizontalOptions="Center"
+            Text="{Binding Funds}"
+            VerticalOptions="Center" />
+        <Image
+            x:Name="PersonImage"
+            Grid.Row="1"
+            Grid.Column="0"
+            Source="{Binding CurrentImage}" />
+    </Grid>
+    <!--</Border>-->
+    <ContentView.GestureRecognizers>
+        <DragGestureRecognizer DragStarting="OnDragStartingMyPerson" />
+    </ContentView.GestureRecognizers>
+</ContentView>

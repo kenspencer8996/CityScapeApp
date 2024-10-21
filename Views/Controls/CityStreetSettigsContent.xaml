@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="CityScapeApp.Views.Controls.CityStreetSettigsContent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Border BackgroundColor="#E2725B" StrokeShape="RoundRectangle 10,10,10,10">
+        <Grid HeightRequest="150" WidthRequest="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="TravelSpeedLabel" Text=" Badguy Speed" />
+            <Entry
+                x:Name="travelSpeedentry"
+                Grid.Row="0"
+                Grid.Column="1"
+                Placeholder="Enter speed"
+                TextChanged="travelSpeedentry_TextChanged" />
+            <Label
+                x:Name="AlarmTimeLabel"
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Burg Alarm Time" />
+            <Entry
+                x:Name="alarmentry"
+                Grid.Row="1"
+                Grid.Column="1"
+                Placeholder="Enter speed"
+                TextChanged="alarmentry_TextChanged_1" />
+            <Label
+                x:Name="BadGuyCountLabel"
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="No Bad Guys" />
+            <Entry
+                x:Name="badguycountentry"
+                Grid.Row="3"
+                Grid.Column="1"
+                Placeholder="Enter count"
+                TextChanged="badguycountentry_TextChanged_1" />
+            <Label
+                x:Name="CampTravelSpeedlabel"
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="Campfire travel speed" />
+            <Entry
+                x:Name="CampFireTravelSpeedTimeentry"
+                Grid.Row="4"
+                Grid.Column="2"
+                Placeholder="Enter time"
+                TextChanged="CampFireTravelSpeedTimeentry_TextChanged" />
+            <Label
+                x:Name="CampSleeplabel"
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="Campfire sleeptime" />
+
+            <Entry
+                x:Name="CampFireSleepentry"
+                Grid.Row="2"
+                Grid.Column="3"
+                Placeholder="Enter time"
+                TextChanged="CampFireSleepentry_TextChanged" />
+            <Label
+                x:Name="PoliceCarSpeedlabel"
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="Campfire Sleep (s)" />
+            <Entry
+                x:Name="policecarspeedentry"
+                Grid.Row="3"
+                Grid.Column="2"
+                Placeholder="Enter speed"
+                TextChanged="policecarspeedentry_TextChanged_1" />
+        </Grid>
+    </Border>
+
+</ContentView>

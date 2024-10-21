@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityScapeApp.Views.Controls.Person.PoliceContent" 
+             MaximumHeightRequest="75" MaximumWidthRequest="39"
+             MinimumHeightRequest="70" MinimumWidthRequest="34"
+             Opacity="0" >
+    <!--<Border  ZIndex="1">-->
+        <Grid x:Name="BadGuyGrid" >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+          <Image x:Name="PersonImage" VerticalOptions="Fill" HorizontalOptions="Fill">
+          </Image>
+    </Grid>
+    <!--</Border>-->
+    <ContentView.GestureRecognizers>
+        <DragGestureRecognizer DragStarting="OnDragStartingMyPerson" />
+    </ContentView.GestureRecognizers>
+</ContentView>

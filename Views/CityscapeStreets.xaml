@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CityScapeApp.Views.CityscapeStreets"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:car="clr-namespace:CityScapeApp.Views.Controls.Car"
+    xmlns:ctrls="clr-namespace:CityScapeApp.Views.Controls"
+    xmlns:person="clr-namespace:CityScapeApp.Views.Controls.Person"
+    xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+    xmlns:skiaMaui="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+    xmlns:views="clr-namespace:CityScapeApp.Views"
+    Title="Cityscape Streets">
+    <AbsoluteLayout
+        x:Name="CitylayOut"
+        HeightRequest="600"
+        HorizontalOptions="Start"
+        VerticalOptions="Start"
+        WidthRequest="1200"
+        ZIndex="1">
+        <AbsoluteLayout.GestureRecognizers>
+            <DropGestureRecognizer DragOver="DropGestureRecognizer_DragOver" Drop="DropGestureRecognizer_Drop" />
+            <SwipeGestureRecognizer Direction="Left,Right" Swiped="SwipeGestureRecognizer_Swiped" />
+        </AbsoluteLayout.GestureRecognizers>
+        <Image
+            AbsoluteLayout.LayoutBounds="0,0"
+            Aspect="AspectFill"
+            BindingContext="{x:Reference CitylayOut}"
+            HeightRequest="{Binding Path=Height}"
+            Source="greenyard.jpg"
+            WidthRequest="{Binding Path=Width}"
+            ZIndex="2" />
+        <Border
+            x:Name="MainStreetMapBorder"
+            AbsoluteLayout.LayoutBounds="0,0"
+            BindingContext="{x:Reference CitylayOut}"
+            HeightRequest="{Binding Path=Height}"
+            WidthRequest="{Binding Path=Width}"
+            ZIndex="3">
+            <skiaMaui:SKCanvasView
+                x:Name="canvasView"
+                AbsoluteLayout.LayoutBounds="0,0"
+                BindingContext="{x:Reference MainStreetMapBorder}"
+                HeightRequest="{Binding Path=Height}"
+                PaintSurface="canvasView_PaintSurface"
+                WidthRequest="{Binding Path=Width}" />
+        </Border>
+        <ImageButton x:Name="ToolbarSelector" Clicked="ToolbarSelector_Clicked" />
+        <ctrls:MenuLayoutControl x:Name="mainMenuLayoutControl" AbsoluteLayout.LayoutBounds="30,30" />
+        <person:BadPersonnContent
+            x:Name="BadGuy1"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <person:BadPersonnContent
+            x:Name="BadGuy2"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <person:BadPersonnContent
+            x:Name="BadGuy3"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <person:BadPersonnContent
+            x:Name="BadGuy4"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <person:BadPersonnContent
+            x:Name="BadGuy5"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <person:BadPersonnContent
+            x:Name="BadGuy6"
+            AbsoluteLayout.LayoutBounds="600,290"
+            Rotation="90" />
+        <Image
+            x:Name="Forest1"
+            AbsoluteLayout.LayoutBounds="650,170"
+            HeightRequest="250"
+            Source="forest_1.png"
+            WidthRequest="350"
+            ZIndex="5" />
+        <Image
+            x:Name="Bush1"
+            AbsoluteLayout.LayoutBounds="950,150"
+            HeightRequest="75"
+            Source="bushgreen_1.png"
+            WidthRequest="150"
+            ZIndex="5" />
+        <Image
+            x:Name="Bush3"
+            AbsoluteLayout.LayoutBounds="480,285"
+            HeightRequest="35"
+            Source="bushgreen_1.png"
+            WidthRequest="150"
+            ZIndex="115" />
+        <Image
+            x:Name="Bush2"
+            AbsoluteLayout.LayoutBounds="460,130"
+            HeightRequest="60"
+            Source="bushgreenblooms_1.png"
+            WidthRequest="130"
+            ZIndex="5" />
+        <Image
+            x:Name="CampfireImage"
+            AbsoluteLayout.LayoutBounds="520,340"
+            HeightRequest="40"
+            Source="campfire3d.png"
+            WidthRequest="40"
+            ZIndex="10" />
+        <Image
+            x:Name="Tree1Image"
+            AbsoluteLayout.LayoutBounds="540,245"
+            HeightRequest="80"
+            Source="tree1.png"
+            WidthRequest="80"
+            ZIndex="102" />
+        <Image
+            x:Name="Tree2Image"
+            AbsoluteLayout.LayoutBounds="540,230"
+            HeightRequest="80"
+            Source="tree1.png"
+            WidthRequest="80"
+            ZIndex="10" />
+        <Image
+            x:Name="Barn1"
+            AbsoluteLayout.LayoutBounds="790,150"
+            HeightRequest="80"
+            Source="barn1.png"
+            WidthRequest="80"
+            ZIndex="4" />
+        <Image
+            x:Name="Shed1"
+            AbsoluteLayout.LayoutBounds="700,150"
+            HeightRequest="40"
+            Source="shed1.png"
+            WidthRequest="40"
+            ZIndex="5" />
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,38 @@
+VehiclesImages.Add("autospportcarfitst.png");       VehiclesImages.Add("autotruck.png");
+BadguysImages.Add("badguy2coffee.png");            BadguysImages.Add("badguy2money.png");
+BadguysImages.Add("badguy2smirk.png");             BadguysImages.Add("badguy3.png");
+BadguysImages.Add("badguy4.png");                  BadguysImages.Add("badguy4armsup.png");
+BadguysImages.Add("badguy4mojojojo.png");          BadguysImages.Add("badguy5amsout.png");
+BadguysImages.Add("badguyarmsdown.png");           BadguysImages.Add("badguydevil.png");
+BadguysImages.Add("badguylootgun.png");            BadguysImages.Add("badguymad.png");
+BadguysImages.Add("badguywcash.png");              BadguysImages.Add("badguywithgun.png");
+BadguysImages.Add("badguywloot.png");              FinancialImages.Add("bank1.png");
+FinancialImages.Add("bank2.png");                    RetailImages.Add("carlotraw.jpg
+     RoomImages.Add("classroom.svg");
+ FinancialImages.Add("factory1.png");
+FinancialImages.Add("factory2.png");                 RoomImages.Add("garage1.png");
+RoomImages.Add("garage2.png");                  RoomImages.Add("garage3.png");
+girlwplus.png");                greenyard.png");
+
+HouseImages.Add("houseImages.Add("hoise3d1.png");                 HouseImages.Add("houseImages.Add("hoise3s2.png");
+houase3dwyard.png");            HouseImages.Add("house1.jpg
+HouseImages.Add("house2.jpg                   HouseImages.Add("house3.png");
+HouseImages.Add("house3d4.png");                 HouseImages.Add("house3d5.png");
+HouseImages.Add("house3d6.png");                 HouseImages.Add("house3d7.png");
+HouseImages.Add("house3dtrees.png");             HouseImages.Add("house3dtrees2.png");
+HouseImages.Add("house3dtrees3.png");            HouseImages.Add("house3dyardfence.png");
+HouseImages.Add("house3s1.png");                 HouseImages.Add("housedkbrownroofRoomImages.Add("garage.png");
+HouseImages.Add("housegrayroofRoomImages.Add("garage.png");      HouseImages.Add("housegreenroofRoomImages.Add("garage.png");
+HouseImages.Add("houseredroofRoomImages.Add("garage.png");       imagenofoundmessage.png");
+                   RoomImages.Add("kitchen1.png");
+RoomImages.Add("kitchen2.png");                 RoomImages.Add("kitchen3.png");
+RoomImages.Add("kitchenwtable.svg");            RoomImages.Add("livingroom1.png");
+RoomImages.Add("livingroom2.png");              RoomImages.Add("livingroom3.png");
+RoomImages.Add("livingroom4.png");              RoomImages.Add("livingroom5.jpg
+RoomImages.Add("livingroomarmchair.svg");       RoomImages.Add("livingroombig.svg");
+RoomImages.Add("livingroomcityview.svg");       RoomImages.Add("livingroomcouch.svg");
+
+PersonsImages.Add("peoplegirlfirst.png");          PersonsImages.Add("peoplegirlfirstworking.png");
+PersonsImages.Add("peoplemanfirst.png");           PersonsImages.Add("peoplemanfirstworking.png");
+ RetailImages.Add("petshop1.png");               
+

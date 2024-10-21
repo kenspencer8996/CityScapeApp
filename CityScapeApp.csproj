@@ -1,0 +1,307 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>CityScapeApp</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>CityScapeApp</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.cityscapeapp</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+		<AppxPackageSigningEnabled>False</AppxPackageSigningEnabled>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+		<AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<AppInstallerUri>C:\Users\kensp\OneDrive\dev\Deployments\CityAppDeploy</AppInstallerUri>
+		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+			</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Controllers\CityLayoutcontrolController.cs" />
+	  <Compile Remove="Controllers\MainPageController.cs" />
+	  <Compile Remove="Views\Controls\Business\PoliceStationContent.xaml.cs" />
+	  <Compile Remove="Views\Controls\MasterLayout\CityLayoutcontrol.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Views\Controls\Business\PoliceStationContent.xaml" />
+	  <MauiXaml Remove="Views\Controls\MasterLayout\CityLayoutcontrol.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\airport3d.jpg" />
+	  <None Remove="Resources\Images\airportrunwaylanding.png" />
+	  <None Remove="Resources\Images\airportrunwaylandingtaxiing.jpg" />
+	  <None Remove="Resources\Images\appexpand.jpg" />
+	  <None Remove="Resources\Images\appshrink.jpg" />
+	  <None Remove="Resources\Images\arrowleft.png" />
+	  <None Remove="Resources\Images\arrowright.png" />
+	  <None Remove="Resources\Images\autospportcarfitst.png" />
+	  <None Remove="Resources\Images\autotruck.png" />
+	  <None Remove="Resources\Images\auto_1_spportcarfitst.jpg" />
+	  <None Remove="Resources\Images\auto_3_truck.jpg" />
+	  <None Remove="Resources\Images\badguy3.png" />
+	  <None Remove="Resources\Images\badguy4.png" />
+	  <None Remove="Resources\Images\badguy4armsup.png" />
+	  <None Remove="Resources\Images\badguy4mojojojo.png" />
+	  <None Remove="Resources\Images\badguy5amsout.png" />
+	  <None Remove="Resources\Images\badguyarmsdown.png" />
+	  <None Remove="Resources\Images\badguydevil.png" />
+	  <None Remove="Resources\Images\badguylootgun.png" />
+	  <None Remove="Resources\Images\badguymad.png" />
+	  <None Remove="Resources\Images\badguywcash.png" />
+	  <None Remove="Resources\Images\badguywithgun.png" />
+	  <None Remove="Resources\Images\badguywloot.png" />
+	  <None Remove="Resources\Images\badguy_10_devil.jpg" />
+	  <None Remove="Resources\Images\badguy_2_coffee.jpg" />
+	  <None Remove="Resources\Images\badguy_2_money.jpg" />
+	  <None Remove="Resources\Images\badguy_2_smirk.jpg" />
+	  <None Remove="Resources\Images\badguy_3.jpg" />
+	  <None Remove="Resources\Images\badguy_4.jpg" />
+	  <None Remove="Resources\Images\badguy_4_armsup.jpg" />
+	  <None Remove="Resources\Images\badguy_6_armsdown.jpg" />
+	  <None Remove="Resources\Images\badguy_6_cashgun.jpg" />
+	  <None Remove="Resources\Images\badguy_6_mad.jpg" />
+	  <None Remove="Resources\Images\badguy_6_wcash.jpg" />
+	  <None Remove="Resources\Images\badguy_6_withgun.jpg" />
+	  <None Remove="Resources\Images\badguy_6_wloot.jpg" />
+	  <None Remove="Resources\Images\badguy_9.jpg" />
+	  <None Remove="Resources\Images\bank1.png" />
+	  <None Remove="Resources\Images\bank2.png" />
+	  <None Remove="Resources\Images\bank_1.jpg" />
+	  <None Remove="Resources\Images\bank_2.jpg" />
+	  <None Remove="Resources\Images\barn1.png" />
+	  <None Remove="Resources\Images\campfire3d.png" />
+	  <None Remove="Resources\Images\carlotraw.jpg" />
+	  <None Remove="Resources\Images\catoricityapplabel.jpg" />
+	  <None Remove="Resources\Images\classroom.svg" />
+	  <None Remove="Resources\Images\classroom_1.svg" />
+	  <None Remove="Resources\Images\downarrow.png" />
+	  <None Remove="Resources\Images\factory1.png" />
+	  <None Remove="Resources\Images\factory2.png" />
+	  <None Remove="Resources\Images\factory_1.jpg" />
+	  <None Remove="Resources\Images\factory_2.jpg" />
+	  <None Remove="Resources\Images\garage_1.jpg" />
+	  <None Remove="Resources\Images\garage_2.jpg" />
+	  <None Remove="Resources\Images\garage_3.jpg" />
+	  <None Remove="Resources\Images\gearsimage.png" />
+	  <None Remove="Resources\Images\girlwplus.png" />
+	  <None Remove="Resources\Images\girl_1.jpg" />
+	  <None Remove="Resources\Images\girl_1.png" />
+	  <None Remove="Resources\Images\girl_1_head.jpg" />
+	  <None Remove="Resources\Images\girl_1_plus.jpg" />
+	  <None Remove="Resources\Images\girl_1_working.png" />
+	  <None Remove="Resources\Images\girl_2_slacks_45deg.jpg" />
+	  <None Remove="Resources\Images\girl_2_slacks_front.jpg" />
+	  <None Remove="Resources\Images\girl_2_slacks_side.jpg" />
+	  <None Remove="Resources\Images\girl_3_fingerup.png" />
+	  <None Remove="Resources\Images\girl_4_armsout.png" />
+	  <None Remove="Resources\Images\girl_5.png" />
+	  <None Remove="Resources\Images\Girl_6_pigtaila.png" />
+	  <None Remove="Resources\Images\girl_7_armsout.png" />
+	  <None Remove="Resources\Images\girl_8.png" />
+	  <None Remove="Resources\Images\girl_8_airguitar.png" />
+	  <None Remove="Resources\Images\girl_8_dancing.png" />
+	  <None Remove="Resources\Images\girl_8_lookingback.png" />
+	  <None Remove="Resources\Images\girl_8_walking.png" />
+	  <None Remove="Resources\Images\greenyard.jpg" />
+	  <None Remove="Resources\Images\hoise3d1.png" />
+	  <None Remove="Resources\Images\hoise3s2.png" />
+	  <None Remove="Resources\Images\houase3dwyard.png" />
+	  <None Remove="Resources\Images\houase_13_3dwyard.jpg" />
+	  <None Remove="Resources\Images\house1.jpg" />
+	  <None Remove="Resources\Images\house2.jpg" />
+	  <None Remove="Resources\Images\house3.png" />
+	  <None Remove="Resources\Images\house3d4.png" />
+	  <None Remove="Resources\Images\house3d5.png" />
+	  <None Remove="Resources\Images\house3d6.png" />
+	  <None Remove="Resources\Images\house3d7.png" />
+	  <None Remove="Resources\Images\house3dtrees.png" />
+	  <None Remove="Resources\Images\house3dtrees2.png" />
+	  <None Remove="Resources\Images\house3dtrees3.png" />
+	  <None Remove="Resources\Images\house3dyardfence.png" />
+	  <None Remove="Resources\Images\house3s1.png" />
+	  <None Remove="Resources\Images\house_11_3d1.jpg" />
+	  <None Remove="Resources\Images\house_12_3ds2.jpg" />
+	  <None Remove="Resources\Images\house_3d4.jpg" />
+	  <None Remove="Resources\Images\house_5_dkbrownroofgarage.jpg" />
+	  <None Remove="Resources\Images\house_6_grayroofgarage.jpg" />
+	  <None Remove="Resources\Images\kitchenwtable.svg" />
+	  <None Remove="Resources\Images\kitchen_1_room.jpg" />
+	  <None Remove="Resources\Images\kitchen_2_room.jpg" />
+	  <None Remove="Resources\Images\kitchen_3_room.jpg" />
+	  <None Remove="Resources\Images\kitchen_4_wtableroom.svg" />
+	  <None Remove="Resources\Images\livingroombig.svg" />
+	  <None Remove="Resources\Images\livingroomcityview.svg" />
+	  <None Remove="Resources\Images\livingroomcouch.svg" />
+	  <None Remove="Resources\Images\living_10_roomarmchair.svg" />
+	  <None Remove="Resources\Images\living_11_roombig.svg" />
+	  <None Remove="Resources\Images\living_12_roomcityview.svg" />
+	  <None Remove="Resources\Images\living_13_roomcouch.svg" />
+	  <None Remove="Resources\Images\living_5_room.jpg" />
+	  <None Remove="Resources\Images\living_6_room.jpg" />
+	  <None Remove="Resources\Images\living_8_room.jpg" />
+	  <None Remove="Resources\Images\living_9_room.jpg" />
+	  <None Remove="Resources\Images\living__7_room.jpg" />
+	  <None Remove="Resources\Images\man_1.jpg" />
+	  <None Remove="Resources\Images\man_1.png" />
+	  <None Remove="Resources\Images\man_1_head.jpg" />
+	  <None Remove="Resources\Images\man_3.png" />
+	  <None Remove="Resources\Images\man_5.png" />
+	  <None Remove="Resources\Images\man_6.png" />
+	  <None Remove="Resources\Images\man_7.png" />
+	  <None Remove="Resources\Images\man_8.png" />
+	  <None Remove="Resources\Images\petshop1.png" />
+	  <None Remove="Resources\Images\petshopoutside.jpg" />
+	  <None Remove="Resources\Images\policeman1.png" />
+	  <None Remove="Resources\Images\policeman1car.png" />
+	  <None Remove="Resources\Images\policeman1rifle.png" />
+	  <None Remove="Resources\Images\policeman1running.png" />
+	  <None Remove="Resources\Images\policemuaclecar.png" />
+	  <None Remove="Resources\Images\policestation.png" />
+	  <None Remove="Resources\Images\policewoman1gun.png" />
+	  <None Remove="Resources\Images\policewoman1runninggun.png" />
+	  <None Remove="Resources\Images\policewoman1walking.png" />
+	  <None Remove="Resources\Images\policewoman1walking2.png" />
+	  <None Remove="Resources\Images\shed1.png" />
+	  <None Remove="Resources\Images\streetsicon.jpg" />
+	  <None Remove="Resources\Images\tentxprnt.jpg" />
+	  <None Remove="Resources\Images\tree1.png" />
+	  <None Remove="Resources\Raw\burglar_security_system_bell.wav" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.1.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Dapper" Version="2.1.35" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.91" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="3.0.1" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
+		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Controls\Business\BusinessDetailContent.xaml.cs">
+	    <DependentUpon>BusinessDetailContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\Car\CarPoliceContent.xaml.cs">
+	    <DependentUpon>CarPoliceContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\House\HouseDetailContent.xaml.cs">
+	    <DependentUpon>HouseDetailContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\House\HouseDetao;Content.xaml.cs">
+	    <DependentUpon>HouseDetao%3bContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\Person\BadPersonnContent.xaml.cs">
+	    <DependentUpon>BadPersonnContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\Person\PersonGuitarContent.xaml.cs">
+	    <DependentUpon>PersonGuitarContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\Police\PoliceStationContent.xaml.cs">
+	    <DependentUpon>PoliceStationContent.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Controls\Police\PoliceContent.xaml.cs">
+	    <DependentUpon>PoliceContent.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\Business\BusinessDetailContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\Car\CarPoliceContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\CityScapeToolbarent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\CityStreetSettigsContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\House\HouseDetao;Content.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\MenuLayoutControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\Person\PersonGuitarContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\Police\PoliceStationContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\Police\PoliceContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MenuPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\Person\BadPersonnContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\Controls\MasterLayout\" />
+	  <Folder Include="Views\Controls\Shapes\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\burglar_security_system_bell.wav">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
+	</ItemGroup>
+
+</Project>

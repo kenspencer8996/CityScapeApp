@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CityScapeApp.Views.LivingRoomPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:personnsp="clr-namespace:CityScapeApp.Views.Controls.Person"
+    Title="LivingRoomPage"
+    MinimumHeightRequest="504"
+    MinimumWidthRequest="1100">
+    <Grid
+        x:Name="MainGrid"
+        ColumnDefinitions="Auto, Auto, Auto, Auto, Auto"
+        HorizontalOptions="Fill"
+        RowDefinitions="Auto,Auto, Auto, Auto, Auto, Auto"
+        VerticalOptions="Fill">
+        <Grid.GestureRecognizers>
+            <DropGestureRecognizer DragOver="DropGestureRecognizer_DragOver_1" />
+        </Grid.GestureRecognizers>
+        <!--<Label x:Name="TopRightLabel" Text="right top" Grid.Column="4" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Background="#EA1A1A" TextColor="#EAD1D1"/>
+     <Label x:Name="BottomrightLabel" Text="right bottom" Grid.Row="4"  Grid.Column="4" Grid.ColumnSpan="2"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"   Background="#EA1A1A" TextColor="#EAD1D1"/>-->
+        <Image
+            x:Name="RoomImage"
+            Grid.Row="0"
+            Grid.RowSpan="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="5"
+            HorizontalOptions="FillAndExpand"
+            MinimumHeightRequest="200"
+            MinimumWidthRequest="400"
+            VerticalOptions="FillAndExpand"
+            ZIndex="2">
+            <Image.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left,Right" Swiped="SwipeGestureRecognizer_Swiped" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Image
+            x:Name="Guitarimage"
+            Grid.Row="3"
+            Grid.Column="3"
+            Source="guitar_1_neckup.png"
+            WidthRequest="40"
+            ZIndex="5">
+            <Image.GestureRecognizers>
+                <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStarting" />
+            </Image.GestureRecognizers>
+        </Image>
+        <personnsp:PersonGuitarContent
+            x:Name="ThisPersonContent"
+            Grid.Row="3"
+            Grid.Column="4"
+            ZIndex="99" />
+        <!--<Button Text="Root" Clicked="Button_Clicked"/>-->
+        <!--  Command="{Binding NavigateToPageCommand}"/>  -->
+    </Grid>
+
+</ContentPage>

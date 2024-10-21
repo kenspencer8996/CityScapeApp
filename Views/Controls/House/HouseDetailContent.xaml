@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityScapeApp.Views.Controls.House.HouseDetailContent" 
+             >
+    <Border x:Name="MainBorder" StrokeThickness="0" HorizontalOptions="FillAndExpand"
+            Background="Transparent" Stroke="#EF1616">
+        <AbsoluteLayout x:Name="MainLayout"
+          BindingContext="{x:Reference MainBorder}"  >
+            <AbsoluteLayout.GestureRecognizers>
+                <DropGestureRecognizer  
+                DragOver="OnDragOver"
+                Drop="DropGestureRecognizer_Drop"/>
+                <SwipeGestureRecognizer Direction="Left,Right" Swiped="SwipeGestureRecognizer_Swiped"/>
+            </AbsoluteLayout.GestureRecognizers>
+
+            <Image x:Name="HouseDetailImage" ZIndex="1" 
+                   AbsoluteLayout.LayoutBounds="0,0" 
+                   BindingContext="{x:Reference MainLayout}"  
+                   HeightRequest="400" WidthRequest="800"
+                   Aspect="AspectFill" />
+            <Label x:Name="HouseNameLabel" 
+                   AbsoluteLayout.LayoutBounds="100,10" 
+            VerticalOptions="Center"   HorizontalOptions="Center" />
+      
+        <StackLayout x:Name="PersonStack" />
+        <StackLayout x:Name="CarStack" />
+        </AbsoluteLayout>
+    </Border>
+</ContentView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="CityScapeApp.Views.Controls.Person.PersonGuitarContent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="LivingRoom"
+    MaximumHeightRequest="120"
+    MaximumWidthRequest="80">
+    <Border Stroke="#F2E5E5" StrokeThickness="0">
+        <AbsoluteLayout
+            x:Name="PersonLayout"
+            HeightRequest="80"
+            WidthRequest="80">
+            <AbsoluteLayout.GestureRecognizers>
+                <DropGestureRecognizer DragOver="DropGestureRecognizer_DragOver" Drop="DropGestureRecognizer_Drop" />
+                <!--<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />-->
+            </AbsoluteLayout.GestureRecognizers>
+            <Image
+                x:Name="PersonImage"
+                AbsoluteLayout.LayoutBounds="0,20"
+                Aspect="Fill"
+                HeightRequest="80"
+                IsVisible="true"
+                WidthRequest="70"
+                ZIndex="1" />
+            <Image
+                x:Name="Guitarimage"
+                AbsoluteLayout.LayoutBounds="0,0"
+                HorizontalOptions="Fill"
+                IsVisible="True"
+                VerticalOptions="Fill"
+                WidthRequest="60"
+                ZIndex="5" />
+        </AbsoluteLayout>
+    </Border>
+</ContentView>

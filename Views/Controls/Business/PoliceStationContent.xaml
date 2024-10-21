@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+           x:Class="CityScapeApp.Views.Controls.Business.PoliceStationContent"
+             Unloaded="ContentView_Unloaded">
+    <Border Stroke="#A20D0D">
+        <AbsoluteLayout x:Name="MainLayout" HeightRequest="80" WidthRequest="80">
+            <AbsoluteLayout.GestureRecognizers>
+                <DropGestureRecognizer  
+              DragOver="OnDragOver"
+              Drop="DropGestureRecognizer_Drop"/>
+            </AbsoluteLayout.GestureRecognizers>
+            <toolkit:MediaElement x:Name="mediaElement" 
+                                  Source="embed://burglar_security_system_bell.wav"
+                                  ShouldAutoPlay="False"
+                                  StateChanged="mediaElement_StateChanged" />
+            <Image x:Name="PoliceStationImage" AbsoluteLayout.LayoutBounds="0,0" 
+               BindingContext="{x:Reference MainLayout}" Aspect="Fill" 
+                   HeightRequest="{Binding Path=Height}" WidthRequest="{Binding Path=Width}"/>
+        </AbsoluteLayout>
+    </Border>
+</ContentView>

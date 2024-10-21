@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityScapeApp.Views.Controls.Business.BusinessDetailContent">
+    <Border Stroke="#A20D0D">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+        <Grid.GestureRecognizers>
+            <DropGestureRecognizer 
+                DragOver="OnDragOver"
+                Drop="DropGestureRecognizer_Drop"/>
+        </Grid.GestureRecognizers>
+        <Label x:Name="BusinessNameLabel" Grid.Column="0" Grid.ColumnSpan="2"
+            VerticalOptions="Center" Text="{Binding Name}"
+            HorizontalOptions="Center" />
+        <Label x:Name="PayRateheaderLabel" Grid.Row="2" Grid.Column="0"
+       VerticalOptions="Center" Text="Pay Rate"
+           HorizontalOptions="Center" />
+       <Label x:Name="PayRateLabel" Grid.Row="2" Grid.Column="1"
+            VerticalOptions="Center" Text="{Binding EmployeePayHour}"
+            HorizontalOptions="Center" />
+        <Image x:Name="BusinessImage"  Grid.Row="1" 
+               Grid.Column="0" Source="{Binding ImageName}" WidthRequest="60" HeightRequest="60" Aspect="Fill"/>
+        <StackLayout x:Name="PersonStack" Grid.Row="3" Grid.Column="1" >
+        </StackLayout>
+
+    </Grid>
+    </Border>
+</ContentView>

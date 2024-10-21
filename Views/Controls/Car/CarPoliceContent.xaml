@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="CityScapeApp.Views.Controls.Car.CarPoliceContent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Opacity="1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image
+            x:Name="CarImage"
+            Grid.Row="0"
+            Grid.Column="0"
+            HeightRequest="25"
+            Source="policemuaclecar.png"
+            WidthRequest="70" />
+    </Grid>
+
+</ContentView>
